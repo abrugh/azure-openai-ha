@@ -187,6 +187,7 @@ class AzureOpenAIOptionsFlow(OptionsFlow):
                 self.last_rendered_recommended = user_input[CONF_RECOMMENDED]
 
                 options = {
+                    **self.config_entry.options,
                     CONF_RECOMMENDED: user_input[CONF_RECOMMENDED],
                     CONF_PROMPT: user_input.get(
                         CONF_PROMPT, llm.DEFAULT_INSTRUCTIONS_PROMPT
